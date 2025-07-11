@@ -25,31 +25,10 @@ The last comment block of each slide will be treated as slide notes. It will be 
 -->
 
 ---
-transition: none
----
-# The Date constructor
-
-<!-- ts {monaco-run} will turn the editor into something that can run automatically -->
-
-<!-- ```ts {monaco-run} {autorun:false} -->
-
-```ts {1|2|3|4|all}
-let today = new Date();
-console.log("today", today); // This will automatically represent today
-console.log("today - valueOf", today.valueOf()); // Returns a number MS since the UNIX epoch (midnight Jan 1 1970 UTC)
-console.log("today - toString", today.toString()); // Returns the date in local timezone
-```
-
-<!--
-Here is another comment.
--->
+src: ./pages/baseline-knowledge.md
 ---
 
-# The Date constructor
+---
+src: ./pages/date-constructor.md
+---
 
-```ts {monaco-run}
-let today = new Date();
-console.log("today", today); // This will automatically represent today
-console.log("today - valueOf", today.valueOf()); // Returns a number MS since the UNIX epoch (midnight Jan 1 1970 UTC)
-console.log("today - toString", today.toString()); // Returns the date in local timezone
-```
