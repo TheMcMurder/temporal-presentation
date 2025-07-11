@@ -32,3 +32,7 @@ src: ./pages/baseline-knowledge.md
 src: ./pages/date-constructor.md
 ---
 
+<!-- ---
+src: ./pages/examples.md
+--- -->
+
