@@ -44,7 +44,8 @@ console.log("today - toString", today.toString()); // Returns the date in local 
 
 ---
 
-# Parsing inconsistencies
+# Problems with the Date Constructor
+## Parsing inconsistencies
 ```ts {monaco-run} {autorun:false}
 // Same date, different string formats
 let day1 = new Date('2023-01-09');       // 2023-01-09T00:00:00Z (UTC)
@@ -62,3 +63,109 @@ console.log('day3', day3.getTime())
 console.log('day4', day4.getTime())
 
 ```
+
+---
+
+# Problems with the Date Constructor
+## API naming conventions
+
+```ts {monaco-run}
+// SetYear() vs setFullYear()
+const setYearExample = new Date();
+
+setYearExample.setYear(98);
+
+console.log('setYearExample', setYearExample.toString());
+
+setYearExample.setFullYear(98)
+
+console.log('setYearExample', setYearExample.toString());
+```
+
+---
+
+# Combining Problems Scenario
+
+```ts
+// The server sends the time
+// '2024-02-28' to represent midnight on Feb 28 2024 and we parse it
+let serverTime = new Date('2024-02-28')
+// The user does some operations of some sort and we patch the changes.
+// we create the date to send it back and the server only keeps the difference
+let time = `${serverTime.getYear()}-${serverTime.getMonth()}-${serverTime.getDate()}`
+/*
+
+ {
+   clientName: 'Justin',
+   ....
+   date: time
+ }
+*/
+// What is the problem here?
+```
+
+---
+
+
+# Combining Problems Scenario
+
+```ts {monaco-run} {autorun:false}
+// The server sends the time '2024-02-28' to represent midnight on Feb 28 2024 and we parse it.
+
+let serverTime = new Date('2024-02-28');
+
+// 1. GetMonth is 0 based but getDate is not... 
+
+console.log('serverTime.getMonth()', serverTime.getMonth());
+
+let time = `${serverTime.getYear()}-${serverTime.getMonth() + 1}-${serverTime.getDate()}`;
+console.log('time we are about to send back to the server', time);
+```
+
+<!-- We need to use different APIs than expected
+- Get month is 0 based but getDate is not
+- And get year is returning years since 1900 - not even epoch time - Deprecated
+ -->
+
+---
+
+# Combining Problems Scenario
+```ts {monaco-run} {autorun:false}
+// The server sends the time '2024-02-28' to represent midnight on Feb 28 2024 and we parse it.
+let serverTime = new Date('2024-02-28')
+
+// 1. GetMonth is 0 based but getDate is not...
+// 2. GetYear is not at all what we need
+
+let time = `${serverTime.getFullYear()}-${serverTime.getMonth() + 1}-${serverTime.getDate()}`
+console.log('time we are about to send back to the server', time);
+```
+<!-- 
+  When we parsed the string it did so in our local-timezone instead of UTC
+ -->
+
+---
+
+# Combining Problems Scenario
+## Solution
+```ts {monaco-run} {autorun:false}
+// The server sends the time '2024-02-28' to represent midnight on Feb 28 2024 and we parse it.
+let serverTime = new Date(Date.UTC(2024,01,28))
+
+// 1. GetMonth is 0 based but getDate is not...
+// 2. GetYear is not at all what we need
+let month = serverTime.getMonth() + 1
+
+let time = `${serverTime.getFullYear()}-${month.toString().padStart(2, '0')}-${serverTime.getDate()}`
+console.log('time we are about to send back to the server', time);
+```
+<!-- 
+  With Date.UTC and numeric arguments we can force the date to be created in UTC time
+ -->
+
+<v-click>
+
+- We need to also use Date.UTC to keep it consistent
+- Some items are O based and others are 1 based
+- May also need to `padStart`
+</v-click>
