@@ -1,4 +1,4 @@
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
+# A Presentation on the upcoming JS temporal API powered by [Slidev](https://github.com/slidevjs/slidev)!
 
 To start the slide show:
 
