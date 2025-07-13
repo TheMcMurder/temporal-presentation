@@ -9,6 +9,7 @@ layout: center
 monacoRunAdditionalDeps:
   - moment
 ---
+
 # MomentJS
 ## Consistent Parsing
 
@@ -55,6 +56,7 @@ console.log('nextWeek', nextWeek.toString())
 ```
 
 ---
+
 # MomentJS
 ## Cons
 

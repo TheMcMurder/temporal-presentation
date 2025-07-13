@@ -1,5 +1,3 @@
----
-
 # The Date constructor
 
 <v-clicks>
@@ -15,6 +13,7 @@
 ---
 transition: none
 ---
+
 # The Date constructor
 
 <!-- ts {monaco-run} will turn the editor into something that can run automatically -->
