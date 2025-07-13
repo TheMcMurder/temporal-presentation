@@ -37,3 +37,33 @@ let m = moment('2025-01-01T00:00:00-05:00');
 
 console.log('m formatted', m.tz('Asia/Tokyo').format('YYYY-MM-DD HH:mm:ss')); // "2025-01-01 14:00:00"
 ```
+
+---
+monacoRunAdditionalDeps:
+  - moment
+---
+# MomentJS
+## Date Arithmetic
+
+```ts {monaco-run}
+import moment from 'moment'
+let m = moment();
+let nextWeek = m.add(7, 'days');
+
+console.log('m', m.toString());
+console.log('nextWeek', nextWeek.toString())
+```
+
+---
+# MomentJS
+## Cons
+
+<v-clicks>
+
+- Monolithic library - 200 KB minified
+- No internal Modularity
+- Mutable created objects
+- Slower than modern alternatives
+- Depreciated
+- Timezone support is less robust than modern alternatives
+</v-clicks>

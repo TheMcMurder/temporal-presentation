@@ -36,6 +36,10 @@ src: ./pages/date-constructor.md
 src: ./pages/momentjs.md
 ---
 
+---
+src: ./pages/other-libraries.md
+---
+
 <!-- ---
 src: ./pages/examples.md
 --- -->
