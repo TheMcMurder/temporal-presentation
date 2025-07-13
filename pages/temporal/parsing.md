@@ -18,7 +18,6 @@ console.log('d2', d2);
 ---
 
 # ISO 8601 parsing only
-Cool right?
 
 ```ts {monaco-run}
 // Error when you use a non ISO 8601 date
