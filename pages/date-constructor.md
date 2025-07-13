@@ -141,7 +141,7 @@ let time = `${serverTime.getFullYear()}-${serverTime.getMonth() + 1}-${serverTim
 console.log('time we are about to send back to the server', time);
 ```
 <!-- 
-  When we parsed the string it did so in our local-timezone instead of UTC
+  When we parsed the string it's saved as UTC internally but most APIs return the local timezone
  -->
 
 ---
@@ -150,13 +150,13 @@ console.log('time we are about to send back to the server', time);
 ## Solution
 ```ts {monaco-run} {autorun:false}
 // The server sends the time '2024-02-28' to represent midnight on Feb 28 2024 and we parse it.
-let serverTime = new Date(Date.UTC(2024,01,28))
+let serverTime = new Date('2024-02-28')
 
 // 1. GetMonth is 0 based but getDate is not...
 // 2. GetYear is not at all what we need
-let month = serverTime.getMonth() + 1
+let month = serverTime.getUTCMonth() + 1
 
-let time = `${serverTime.getFullYear()}-${month.toString().padStart(2, '0')}-${serverTime.getDate()}`
+let time = `${serverTime.getUTCFullYear()}-${month.toString().padStart(2, '0')}-${serverTime.getUTCDate()}`
 console.log('time we are about to send back to the server', time);
 ```
 <!-- 
@@ -165,7 +165,7 @@ console.log('time we are about to send back to the server', time);
 
 <v-click>
 
-- We need to also use Date.UTC to keep it consistent
+- getUTCFullYear, getUTCMonth, and getUTCDate are needed
 - Some items are O based and others are 1 based
 - May also need to `padStart`
 </v-click>
