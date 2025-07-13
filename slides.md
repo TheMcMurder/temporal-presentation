@@ -40,6 +40,10 @@ src: ./pages/momentjs.md
 src: ./pages/other-libraries.md
 ---
 
+---
+src: ./pages/temporal/temporal-all.md
+---
+
 <!-- ---
 src: ./pages/examples.md
 --- -->

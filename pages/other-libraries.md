@@ -94,5 +94,5 @@ layout: two-cols-header
 - Like moment TZ support is a separate bundle
 - No chaining
 - Limited locale support
-- Operates directly on native JS dates, inheriting all of the quirks
+- Operates directly on native JS dates, inheriting many of the quirks
 </v-click>

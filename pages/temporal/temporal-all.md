@@ -1,0 +1,3 @@
+---
+src: ./temporal-intro.md
+---
