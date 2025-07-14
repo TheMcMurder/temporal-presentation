@@ -20,10 +20,6 @@ Why Dates in Javascript are about to "get good"
   Press Space for next page <carbon:arrow-right />
 </div>
 
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
-
 ---
 src: ./pages/baseline-knowledge.md
 ---
@@ -50,8 +46,6 @@ src: ./pages/quiz.md
 
 ---
 
-# Thank you
-
-- Feedback
+![Feedback Form](./pages/temporal/assets/google-form-feedback.png)
 
 
