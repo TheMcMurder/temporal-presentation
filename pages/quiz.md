@@ -69,16 +69,95 @@ The number 0 is not a string and temporal can only parse ISO 8601
 ---
 
 ```ts {monaco-run} {autorun:false}
-let value = Date.parse(0) === Date.parse("0");
-console.log(value);
+let date = new Date("1");
+console.log(date);
 ```
-1. Throws an error
-2. false
-3. undefined
-4. true
+1. 0001-01-01T00:00:00.000Z
+2. 1970-01-01T00:00:01.000Z
+3. Invalid Date
+4. 2001-01-01T07:00:00.000Z
 
 Thank you to [jsdate.wtf](https://jsdate.wtf)
 
 <!-- 
-Both parse to 946684800000 milliseconds! Date.parse only operates on strings, so 0 is coerced to the string "0".
+  "1" is interpreted as a year, so this is 2000+1.
+ -->
+
+---
+
+```ts {monaco-run} {autorun:false}
+const plainDate = Temporal.PlainDate.from("1")
+console.log(plainDate)
+```
+1. Throws an error
+2. 1970-01-01T00:00:01.000Z
+3. Invalid Date
+4. 2001-01-01T00:00:00.000Z
+
+<!-- 
+  "1" is not in ISO 8601 cannot be turned into a Temporal date
+ -->
+
+---
+
+```ts {monaco-run} {autorun:false}
+let date = new Date("2");
+console.log(date);
+```
+1. Invalid Date
+2. 2001-01-02T00:00:00.000Z
+3. 2001-02-01T07:00:00.000Z
+4. 2001-02-01T00:00:00.00PZ
+
+Thank you to [jsdate.wtf](https://jsdate.wtf)
+
+<!-- 
+  "2" is interpreted as a month, and the year is set to 2001.
+ -->
+
+---
+
+```ts {monaco-run} {autorun:false}
+const plainDate = Temporal.PlainDate.from("2")
+console.log(plainDate)
+```
+1. Throws an error
+2. 1970-01-01T00:00:01.000Z
+3. Invalid Date
+4. 2001-01-01T00:00:00.000Z
+
+<!-- 
+  "2" is not in ISO 8601 cannot be turned into a Temporal date
+ -->
+
+---
+
+```ts {monaco-run} {autorun:false}
+let date = new Date("maybe 1");
+console.log(date);
+```
+1. null in Chrome and 2001-05-01T06:00:00.000Z in Firefox
+2. null in Firefox and 2001-05-01T06:00:00.000Z in Chrome
+3. Invalid Date in Both Firefox and Chrome
+4. 2001-04-30T06:00:00.000Z in both Firefox and Chrome
+
+Thank you to [jsdate.wtf](https://jsdate.wtf)
+
+<!-- 
+  "may" in "maybe" is parsed as the month May! And for some reason this expression cares about your local timezone.
+ -->
+
+---
+
+```ts {monaco-run} {autorun:false}
+const plainDate = Temporal.PlainDate.from("maybe 1")
+console.log(plainDate)
+```
+1. 1970-01-01T00:00:01.000Z
+2. Throws an error
+3. Invalid Date
+4. 2001-01-01T00:00:00.000Z
+
+<!-- 
+  "maybe 1" is not in ISO 8601 cannot be turned into a Temporal date
  -->
