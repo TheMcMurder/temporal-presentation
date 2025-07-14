@@ -64,6 +64,7 @@ layout: two-cols-header
 - Needs plugins for features
 - Smaller ecosystem
 - Plugin fragmentation
+- Plugins behave globally
 - Partial tree shaking
 - Infrequent releases
 </v-click>

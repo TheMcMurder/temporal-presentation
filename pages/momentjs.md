@@ -49,9 +49,9 @@ monacoRunAdditionalDeps:
 ```ts {monaco-run}
 import moment from 'moment'
 let m = moment();
+console.log('m', m.toString());
 let nextWeek = m.add(7, 'days');
 
-console.log('m', m.toString());
 console.log('nextWeek', nextWeek.toString())
 ```
 
@@ -68,4 +68,5 @@ console.log('nextWeek', nextWeek.toString())
 - Slower than modern alternatives
 - Depreciated
 - Timezone support is less robust than modern alternatives
+- Timezone support requires separate package
 </v-clicks>

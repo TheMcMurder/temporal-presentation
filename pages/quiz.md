@@ -8,7 +8,7 @@ console.log(date)
 1. 2000-01-01T00:00:00.000Z
 2. Invalid Date
 3. 1970-01-01T00:00:00.000Z
-4. Throws an error
+4. 2000-01-01T07:00:00.000Z
 
 Thank you to [jsdate.wtf](https://jsdate.wtf)
 

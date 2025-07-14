@@ -15,6 +15,14 @@ console.log('d2', d2);
 
 ```
 
+<!-- 
+With the JS date constructor different date formats produce different values. Sometimes it cares about local timezone and sometimes it doesn't. It's also inconsistent between browsers where one format cares about local timezone in one browser and doesn't in another.
+
+
+That problem doesn't exist in temporal because ...
+
+ -->
+
 ---
 
 # ISO 8601 parsing only

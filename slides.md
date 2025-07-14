@@ -48,7 +48,10 @@ src: ./pages/temporal/temporal-all.md
 src: ./pages/quiz.md
 ---
 
-<!-- ---
-src: ./pages/examples.md
---- -->
+---
+
+# Thank you
+
+- Feedback
+
 

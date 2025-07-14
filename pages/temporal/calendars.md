@@ -16,8 +16,12 @@ function myToString(temporalDate) {
 ```
 
 <!-- 
-	•	The Temporal API keeps the underlying date consistent, and the annotation tells you which calendar system is being used for interpretation.
-	•	This approach helps avoid confusion about what absolute day is being referenced, especially when working across multiple calendar systems.
+
+  Taking a look at the output you'll see that when I log out the date normally it shows an absolute moment in time
+  
+  and the annotation tells you which calendar system is being used
+
+  This helps avoid confusion about what absoute moment is being referenced which makes working across calendar systems easier
 -->
 
 
