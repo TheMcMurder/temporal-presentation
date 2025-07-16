@@ -25,10 +25,21 @@ That problem doesn't exist in temporal because ...
 
 ---
 
-# ISO 8601 parsing only
+# RFC9557 / ISO 8601 parsing only
+
+`YYYY-MM-DD T HH:mm:ss.sssssssss Z/±HH:mm [time_zone_id] [u-ca=calendar_id]`
 
 ```ts {monaco-run}
 // Error when you use a non ISO 8601 date
 Temporal.PlainDate.from('2025/03/01') 
 
 ```
+<!-- 
+
+All Temporal classes can be serialed and deserialized using the format specified in RFC 9557 which is based on ISO 8601.
+
+I'm going to call it ISO 8601 parsing from now on though because it is basically that format but with the addition of micro and nano seconds, timezone information, and calendar information
+
+In practice this means that anything besides the ISO 8601 format will throw an error.
+
+ -->

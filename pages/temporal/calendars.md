@@ -22,6 +22,8 @@ function myToString(temporalDate) {
   and the annotation tells you which calendar system is being used
 
   This helps avoid confusion about what absoute moment is being referenced which makes working across calendar systems easier
+
+  Internally Temporal is using the Gregorian calendar system
 -->
 
 
