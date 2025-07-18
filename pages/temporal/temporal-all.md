@@ -11,6 +11,10 @@ src: ./immutable.md
 ---
 
 ---
+src: ./chaining.md
+---
+
+---
 src: ./time-zones.md
 ---
 
