@@ -45,7 +45,7 @@ console.log("today - toString", today.toString()); // Returns the date in local 
 
 # Problems with the Date Constructor
 ## Parsing inconsistencies
-```ts {monaco-run} {autorun:false}
+```ts {monaco-run} {showOutputAt: '+1'}
 // Same date, different string formats
 let day1 = new Date('2023-01-09');       // 2023-01-09T00:00:00Z (UTC)
 let day2 = new Date('2023-1-9');         // 2023-01-09T00:00:00 (local time) 😭
@@ -68,7 +68,8 @@ console.log('day4', day4.getTime())
 # Problems with the Date Constructor
 ## API naming conventions
 
-```ts {monaco-run}
+
+```ts {monaco-run} {showOutputAt: '+1'}
 // SetYear() vs setFullYear()
 const setYearExample = new Date();
 
@@ -108,7 +109,7 @@ let time = `${serverTime.getYear()}-${serverTime.getMonth()}-${serverTime.getDat
 
 # Combining Problems Scenario
 
-```ts {monaco-run} {autorun:false}
+```ts {monaco-run} {showOutputAt: '+1'}
 // The server sends the time '2024-02-28' to represent midnight on Feb 28 2024 and we parse it.
 
 let serverTime = new Date('2024-02-28');
@@ -129,7 +130,7 @@ console.log('time we are about to send back to the server', time);
 ---
 
 # Combining Problems Scenario
-```ts {monaco-run} {autorun:false}
+```ts {monaco-run} {showOutputAt: '+1'}
 // The server sends the time '2024-02-28' to represent midnight on Feb 28 2024 and we parse it.
 let serverTime = new Date('2024-02-28')
 
@@ -147,7 +148,7 @@ console.log('time we are about to send back to the server', time);
 
 # Combining Problems Scenario
 ## Solution
-```ts {monaco-run} {autorun:false}
+```ts {monaco-run} {showOutputAt: '+1'}
 // The server sends the time '2024-02-28' to represent midnight on Feb 28 2024 and we parse it.
 let serverTime = new Date('2024-02-28')
 
@@ -162,7 +163,7 @@ console.log('time we are about to send back to the server', time);
   With Date.UTC and numeric arguments we can force the date to be created in UTC time
  -->
 
-<v-click>
+<v-click at="1">
 
 - getUTCFullYear, getUTCMonth, and getUTCDate are needed
 - Some items are O based and others are 1 based
