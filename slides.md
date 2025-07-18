@@ -1,7 +1,7 @@
 ---
 theme: seriph
+title: Temporal
 background: https://images.unsplash.com/photo-1533749047139-189de3cf06d3?q=80&w=1336&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-title: Welcome to Slidev
 info: |
   ## Temporal - an API 30 years in the making
 # apply unocss classes to the current slide
