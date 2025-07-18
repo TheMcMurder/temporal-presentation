@@ -1,6 +1,6 @@
 # Quiz
 
-```ts {monaco-run} {autorun:false}
+```ts {monaco-run} {showOutputAt: '+1'}
 const date = new Date("0")
 console.log(date)
 ```
@@ -18,7 +18,7 @@ The string "0" is interpreted as the year 2000, not as a timestamp!
 
 ---
 
-```ts {monaco-run} {autorun:false}
+```ts {monaco-run} {showOutputAt: '+1'}
 const plaindate = Temporal.PlainDate.from('0') 
 console.log(plaindate)
 ```
@@ -34,7 +34,7 @@ In Temporal you can only parse ISO 8601
 
 ---
 
-```ts {monaco-run} {autorun:false}
+```ts {monaco-run} {showOutputAt: '+1'}
 const date = new Date(0)
 console.log(date)
 ```
@@ -52,7 +52,7 @@ The number 0, as opposed to the string "0", is interpreted as milliseconds since
 
 ---
 
-```ts {monaco-run} {autorun:false}
+```ts {monaco-run} {showOutputAt: '+1'}
 const plainDate = Temporal.PlainDate.from(0)
 console.log(plainDate)
 ```
@@ -68,7 +68,7 @@ The number 0 is not a string and temporal can only parse ISO 8601
 
 ---
 
-```ts {monaco-run} {autorun:false}
+```ts {monaco-run} {showOutputAt: '+1'}
 let date = new Date("1");
 console.log(date);
 ```
@@ -85,7 +85,7 @@ Thank you to [jsdate.wtf](https://jsdate.wtf)
 
 ---
 
-```ts {monaco-run} {autorun:false}
+```ts {monaco-run} {showOutputAt: '+1'}
 const plainDate = Temporal.PlainDate.from("1")
 console.log(plainDate)
 ```
@@ -100,7 +100,7 @@ console.log(plainDate)
 
 ---
 
-```ts {monaco-run} {autorun:false}
+```ts {monaco-run} {showOutputAt: '+1'}
 let date = new Date("2");
 console.log(date);
 ```
@@ -117,7 +117,7 @@ Thank you to [jsdate.wtf](https://jsdate.wtf)
 
 ---
 
-```ts {monaco-run} {autorun:false}
+```ts {monaco-run} {showOutputAt: '+1'}
 const plainDate = Temporal.PlainDate.from("2")
 console.log(plainDate)
 ```
@@ -132,7 +132,7 @@ console.log(plainDate)
 
 ---
 
-```ts {monaco-run} {autorun:false}
+```ts {monaco-run} {showOutputAt: '+1'}
 let date = new Date("maybe 1");
 console.log(date);
 ```
@@ -149,7 +149,7 @@ Thank you to [jsdate.wtf](https://jsdate.wtf)
 
 ---
 
-```ts {monaco-run} {autorun:false}
+```ts {monaco-run} {showOutputAt: '+1'}
 const plainDate = Temporal.PlainDate.from("maybe 1")
 console.log(plainDate)
 ```
