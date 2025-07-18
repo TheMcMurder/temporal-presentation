@@ -13,6 +13,8 @@ console.log(result);
 ```
 <!-- 
   Each operation returns a new `PlainDate` object
+
 	No side effects or mutations
+
 	All steps can be chained seamlessly
  -->
