@@ -1,6 +1,6 @@
 # Time Arithmetic
 
-```ts {monaco-run} {autorun:false}
+```ts {monaco-run} {showOutputAt: '+1'}
 const oStart = new Date('2025-03-01');  
 const oEnd = new Date('2025-03-08');  
 const oDiff = oEnd - oStart; // Milliseconds, no direct day/month support

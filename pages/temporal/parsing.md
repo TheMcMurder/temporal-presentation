@@ -1,6 +1,6 @@
 # Reliable Parsing
 
-```ts {monaco-run}
+```ts {monaco-run} {showOutputAt: '+1'}
 let sd1 = new Date('2025-03-01'); // Interpreted as UTC in some browsers, local time in others  
 let sd2 = new Date('March 1, 2025'); // May fail in non-US locales 
 

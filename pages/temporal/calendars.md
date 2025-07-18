@@ -1,6 +1,6 @@
 # Calendar Conversion
 
-```ts {monaco-run}
+```ts {monaco-run} {showOutputAt: '+1'}
 let jan1 = Temporal.PlainDate.from('2020-01-01');
 
 let islamicDate = jan1.withCalendar('islamic-civil');
@@ -32,7 +32,7 @@ function myToString(temporalDate) {
 # Calendar Conversion
 ## Direct creation
 
-```ts {monaco-run}
+```ts {monaco-run} {showOutputAt: '+1'}
 let hebrewDate = Temporal.PlainDate.from({  
   calendar: 'hebrew',  
   year: 5785,  

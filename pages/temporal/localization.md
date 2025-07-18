@@ -1,6 +1,6 @@
 # Localization
 
-```ts {monaco-run} 
+```ts {monaco-run} {showOutputAt: '+1'} 
 const instant = Temporal.Now.instant();
 
 const locales = [
